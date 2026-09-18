@@ -1,0 +1,29 @@
+# 감사 실데이터 — 공유 금지
+work/
+backup/
+output/
+samples/output/
+samples/backup/
+tests/_out/
+
+# 빌드 산출물
+build/
+dist/
+
+# 파이썬
+__pycache__/
+*.py[cod]
+.venv/
+
+# template/ 의 빈 표준양식은 프로그램의 일부라 포함한다.
+# 자기 조서를 template/ 에 넣었다면 그 파일은 공유하지 말 것.
+
+# 세척 대상 이름 목록 — 개인 이름이 들어가므로 공유하지 않는다
+tools/sanitize_marks.txt
+
+# 공유본에서 빼는 것 — 원본 양식(매크로 안에 저작자 표시·기존 입력값이 남아 있음)과 작업 기록
+template/*.xlsm
+검증결과.md
+조회처_자동화_설계안.md
+tools/db/*_수집보고.md
+tools/db/_기존_백업_*.csv

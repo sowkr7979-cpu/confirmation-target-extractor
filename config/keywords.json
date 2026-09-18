@@ -1,0 +1,377 @@
+{
+  "version": "2026-09-18",
+  "note": "키워드/패턴 사전. 프로그램 수정 없이 이 파일만 고치면 검색 규칙이 바뀐다.",
+  "finance_keywords": [
+    "은행",
+    "보험",
+    "해상",
+    "화재",
+    "이자",
+    "금융",
+    "보증",
+    "부보",
+    "저당",
+    "질권",
+    "차입",
+    "대출",
+    "예금",
+    "적금",
+    "사용제한",
+    "대여",
+    "상환",
+    "캐피탈",
+    "투자",
+    "증권",
+    "배당",
+    "계좌",
+    "신용장",
+    "파생",
+    "어음",
+    "수표",
+    "견질",
+    "신용",
+    "당좌",
+    "리스",
+    "임차",
+    "렌탈"
+  ],
+  "legal_keywords": [
+    "법무",
+    "법률",
+    "변호사",
+    "김앤장",
+    "소송",
+    "배상",
+    "성공보수",
+    "로펌"
+  ],
+  "supplementary_keywords": [],
+  "regex_keywords": [
+    {
+      "label": "L/C",
+      "pattern": "(?<![A-Z0-9])L\\s*[/.]?\\s*C(?![A-Z0-9])",
+      "group": "finance"
+    },
+    {
+      "label": "BANK",
+      "pattern": "(?<![A-Z])(BANK|BANCO|BANQUE)(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "INVESTMENT",
+      "pattern": "(?<![A-Z])INVESTMENT(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "INSURANCE",
+      "pattern": "(?<![A-Z])(INSURANCE|ASSURANCE|REINSURANCE)(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "SECURITIES",
+      "pattern": "(?<![A-Z])SECURITIES(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "CAPITAL",
+      "pattern": "(?<![A-Z])CAPITAL(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "FINANCE",
+      "pattern": "(?<![A-Z])(FINANCE|FINANCIAL)(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "TRUST",
+      "pattern": "(?<![A-Z])TRUST(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "ASSET MANAGEMENT",
+      "pattern": "(?<![A-Z])ASSET\\s*MANAGEMENT(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "FUND",
+      "pattern": "(?<![A-Z])FUND(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "LEASING",
+      "pattern": "(?<![A-Z])(LEASE|LEASING)(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "CREDIT",
+      "pattern": "(?<![A-Z])CREDIT(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "GUARANTEE",
+      "pattern": "(?<![A-Z])(GUARANTEE|GUARANTY)(?:S|ES|ING)?(?![A-Z])",
+      "group": "finance"
+    },
+    {
+      "label": "LAW",
+      "pattern": "(?<![A-Z])LAW(?:S|ES|ING)?(?![A-Z])",
+      "group": "legal"
+    },
+    {
+      "label": "LEGAL",
+      "pattern": "(?<![A-Z])LEGAL(?:S|ES|ING)?(?![A-Z])",
+      "group": "legal"
+    },
+    {
+      "label": "ATTORNEY",
+      "pattern": "(?<![A-Z])ATTORNEY(?:S|ES|ING)?(?![A-Z])",
+      "group": "legal"
+    },
+    {
+      "label": "LLP",
+      "pattern": "(?<![A-Z])LLP(?:S|ES|ING)?(?![A-Z])",
+      "group": "legal"
+    }
+  ],
+  "search_fields": [
+    "counterparty",
+    "description"
+  ],
+  "extract_fields": [
+    "counterparty",
+    "description"
+  ],
+  "institution_suffixes": [
+    "화재해상보험",
+    "해상화재보험",
+    "손해보험",
+    "생명보험",
+    "보증보험",
+    "저축은행",
+    "상호저축은행",
+    "보증기금",
+    "신용협동조합",
+    "새마을금고",
+    "자산운용",
+    "투자운용",
+    "종합금융",
+    "할부금융",
+    "금융투자",
+    "법무법인",
+    "법률사무소",
+    "법무사사무소",
+    "합동법률사무소",
+    "변호사사무소",
+    "은행",
+    "증권",
+    "캐피탈",
+    "캐피털",
+    "생명",
+    "파이낸셜",
+    "신탁",
+    "금고",
+    "신협",
+    "농협",
+    "수협",
+    "축협"
+  ],
+  "suffix_prefix_max_len": 12,
+  "short_alias_min_len": 3,
+  "exclude_names": [],
+  "standalone_suffixes": [
+    "농협",
+    "수협",
+    "축협",
+    "신협",
+    "새마을금고",
+    "우체국"
+  ],
+  "suffix_note": "'보험'·'화재'·'카드' 단독 접미사는 4대보험·보험료계정·'쇼카드' 같은 오탐이 많아 제외했다. 카드사·보험사는 institutions.csv 사전으로 잡는다. 사전에 없는 카드사/보험사가 나오면 institutions.csv에 추가하면 된다.",
+  "legal_entity_patterns": [
+    "(?:유한)?법무법인(?:\\(유한\\))?\\s*[가-힣A-Za-z0-9]{1,12}"
+  ],
+  "reject_name_patterns": [],
+  "reject_note": "기본값 없음. 정규식에 맞는 추출명을 버린다. 비워 두면 아무것도 버리지 않는다.",
+  "exclude_names_rule": "정규화(공백 제거·대문자화) 후 '완전 일치'만 제외한다. 끝부분이 같다는 이유로 제외하지 않는다. 조회처명·기관ID·일치한 별칭 중 하나라도 정확히 일치하면 제외되며, 사전 등록 기관과 미등록 원문 거래처에 동일하게 적용된다. 제외된 항목은 자동화_검색근거 시트에 '제외' 구분과 적용 규칙으로 남는다.",
+  "exclude_names_examples": [
+    "건강보험",
+    "국민건강보험",
+    "고용보험",
+    "산재보험",
+    "산재보험료",
+    "보험료",
+    "국민연금",
+    "장기요양보험",
+    "자동차보험료",
+    "보험차익",
+    "화재보험료",
+    "예금보험",
+    "법인카드",
+    "신용카드",
+    "체크카드",
+    "카드매출",
+    "카드수수료",
+    "카드결제",
+    "법인신용카드"
+  ],
+  "exclude_names_examples_note": "기본값은 비어 있다(개발자 판단으로 거래처를 지우지 않는다). 아래는 사용자가 원할 때 exclude_names로 옮겨 쓸 수 있는 예시일 뿐, 적용되지 않는다.",
+  "legal_suffixes": [
+    "법무법인",
+    "법률사무소",
+    "법무사사무소",
+    "합동법률사무소",
+    "변호사사무소"
+  ],
+  "extract_modes": {
+    "counterparty": [
+      "사전",
+      "명칭패턴",
+      "접미사",
+      "원문유지"
+    ],
+    "description": [
+      "사전",
+      "명칭패턴",
+      "법률접미사"
+    ]
+  },
+  "extract_modes_note": "이름을 어디서 어떻게 뽑을지 정한다. 거래처는 사전 별칭·법률 명칭패턴·금융 접미사를 모두 쓰고, 그래도 이름이 안 나오면 원문 거래처명을 그대로 쓴다(원문유지). 적요는 문장이라 날짜·계약기간·상품명 뒤에 금융 접미사가 붙는 경우가 많아('25/10/07-26/10/06물류파레트보증보험') 금융 접미사 추출을 하지 않는다. 적요에서는 법률 분류 기관 별칭(field_scope.description.alias_categories), 법률 명칭패턴, 법률 접미사(법무사사무소 등)만 뽑는다. 적요에서 금융 접미사에 걸렸지만 채택하지 않은 조각은 자동화_검색근거 시트의 '적요 미채택 조각' 열에 남는다.",
+  "legal_entity_patterns_note": "이름이 뒤에 오는 형태만 여기 넣는다. '법률사무소'·'법무사사무소'처럼 이름이 앞에 오는 것은 institution_suffixes/legal_suffixes로 처리한다. 여기에 넣으면 '성원법무사사무소'가 '법무사사무소 등기비용'으로 잘못 잘린다.",
+  "search_scope_note": "검색 대상은 분개장의 '거래처' 열과 '적요' 열이다. 거래처는 금융·법률 키워드·영문 정규식·기관 사전 별칭을 전부 쓴다. 적요는 법률 키워드(법무·법률·변호사·소송 등)·법률 영문 정규식·법률 분류 기관 별칭만 쓴다(field_scope). 적요에 법률 낱말이 있으면 그 행의 거래처를 A열에 올리고, 적요에서 법무법인·법률사무소 명칭을 뽑아 별도 후보로도 넣는다. 적요의 금융 낱말('보증보험료'·'이자' 등)로는 거래처를 포함하지 않는다. 적요·계정과목 원문은 자동화_검색근거 시트에 근거로 남는다.",
+  "match_institution_aliases": true,
+  "match_institution_aliases_note": "거래처명이 기관 사전의 기관명·별칭과 일치하면, 지정 키워드가 없어도 후보가 된다(예: '농협(642403)').",
+  "supplementary_keywords_examples": [
+    "고문료",
+    "자문료",
+    "법률사무소",
+    "파이낸셜"
+  ],
+  "supplementary_keywords_note": "기본 검색에 자동 적용하지 않는다. 기본 검색 조건은 finance_keywords + legal_keywords + regex_keywords + 기관 사전의 기관명·별칭으로 제한한다. 필요하면 supplementary_keywords에 직접 옮겨 넣는다.",
+  "use_voucher_context": false,
+  "use_voucher_context_note": "같은 전표의 다른 행에서 기관을 찾아 후보를 추가하거나 연결하지 않는다. 거래처명이 검색 조건에 맞지 않으면 적요·계정과목·전표 문맥으로 구제하지 않는다.",
+  "layer_note": "검색된 거래처를 3등급으로 나눈다. A/B만 Control Sheet A열에 출력하고 C는 '자동화_제외후보' 시트에만 남긴다. 등급은 '이름을 어떻게 얻었는가'가 아니라 '거래처명이 금융·법률 기관 명칭 형태인가'로 판정한다.",
+  "layer_a_note": "기관 사전(institutions.csv)의 기관명·별칭과 일치해 institution_id가 붙은 후보.",
+  "layer_b_terms": [
+    "은행",
+    "저축은행",
+    "캐피탈",
+    "캐피털",
+    "증권",
+    "카드",
+    "생명",
+    "화재",
+    "해상",
+    "손해보험",
+    "보증보험",
+    "보증기금",
+    "보증재단",
+    "자산운용",
+    "투자운용",
+    "파이낸셜",
+    "할부금융",
+    "종합금융",
+    "금융투자",
+    "여신",
+    "신탁",
+    "금고",
+    "새마을금고",
+    "신협",
+    "신용협동조합",
+    "농협",
+    "수협",
+    "축협",
+    "우체국예금",
+    "무역보험",
+    "주택금융",
+    "공제조합",
+    "법무법인",
+    "법률사무소",
+    "법무사",
+    "변호사",
+    "로펌",
+    "합동법률",
+    "특허법인",
+    "회계법인",
+    "세무법인",
+    "BANK",
+    "BANCO",
+    "BANQUE",
+    "INVESTMENT",
+    "INSURANCE",
+    "ASSURANCE",
+    "REINSURANCE",
+    "SECURITIES",
+    "CAPITAL",
+    "FINANCE",
+    "FINANCIAL",
+    "TRUST",
+    "ASSET MANAGEMENT",
+    "FUND",
+    "LEASING",
+    "CREDIT",
+    "GUARANTEE",
+    "LAW",
+    "LEGAL",
+    "ATTORNEY",
+    "ATTORNEYS",
+    "LLP"
+  ],
+  "layer_b_note": "사전에 없어도 거래처명에 이 낱말이 들어 있으면 금융·법률 기관 명칭 형태로 보고 A열에 출력한다. 사전에 아직 없는 기관을 놓치지 않기 위한 안전망이다. '보험'·'보증'·'리스'·'신용'·'투자' 단독은 넣지 않는다. 임차보증금 거래처('홈플러스 포스보증금')와 '아이리스'·'2008.10.20신용상사' 같은 일반 거래처가 걸리기 때문이다. 영문 낱말(BANK·INVESTMENT·INSURANCE·LAW 등)은 앞뒤에 영문자가 없을 때만 맞춘다. 'REFUND'의 FUND, 'ENTRUST'의 TRUST는 걸리지 않는다.",
+  "layer_c_review_terms": [
+    "대출",
+    "차입",
+    "자금",
+    "투자",
+    "펀드",
+    "금융",
+    "결제원",
+    "신용장",
+    "어음",
+    "수표",
+    "당좌"
+  ],
+  "layer_c_review_note": "C등급 중 이 낱말이 있으면 '검토 필요'로 표시한다. A열에 넣지는 않되 사용자가 먼저 보도록 제외후보 시트 위쪽에 모은다. 예: '기업시설자금대출(00036)'.",
+  "output_layers": [
+    "A",
+    "B"
+  ],
+  "output_layers_note": "A열에 출력할 등급. ['A']로 바꾸면 사전 일치만 출력한다.",
+  "exclude_categories": [
+    "전자금융",
+    "사회보험"
+  ],
+  "exclude_categories_note": "기관 사전(institutions.csv)의 분류가 여기 해당하면 A열에 넣지 않고 자동화_제외후보 시트로 보낸다. 이름 하나하나를 exclude_names에 적는 대신 유형 단위로 뺀다. '전자금융'은 PG·간편결제사로 카드매출 정산처라 금융거래 조회서 대상이 아니라는 사용자 판단에 따라 뺐다. '사회보험'은 4대보험(국민연금·건강보험·고용보험·산재보험)과 장기요양보험 징수기관으로, 예수금 납부처일 뿐 금융거래 조회 대상이 아니라는 판단에 따라 뺐다. 둘 다 삭제가 아니라 제외후보 시트에 근거와 함께 남는다. 되살리려면 이 목록에서 분류를 지우면 된다. 카드사('카드')는 조회 대상이므로 넣지 않았다.",
+  "field_scope": {
+    "counterparty": {
+      "keyword_groups": [
+        "finance",
+        "legal",
+        "supplementary"
+      ],
+      "regex_groups": [
+        "finance",
+        "legal",
+        "supplementary"
+      ],
+      "alias_categories": null
+    },
+    "description": {
+      "keywords": [
+        "법무",
+        "법률",
+        "변호사",
+        "소송",
+        "성공보수",
+        "로펌"
+      ],
+      "regex_groups": [
+        "legal"
+      ],
+      "alias_categories": [
+        "법률"
+      ]
+    }
+  },
+  "field_scope_note": "열마다 쓰는 검색어 범위. 거래처는 금융·법률 키워드, 영문 정규식, 기관 사전 별칭을 전부 쓴다. 적요는 keywords에 적은 법률 낱말(법무·법률·변호사·소송·성공보수·로펌)·법률 영문 정규식(LAW·LEGAL·ATTORNEY·LLP)·법률 분류 기관 별칭만 쓴다. '배상'은 적요에서 뺐다. 손해배상금·배상금 지급 적요는 상대가 로펌이 아니라 피해자·거래처이기 때문이다(거래처 열에서는 그대로 쓴다). 적요에 법률 낱말이 있으면 그 행의 거래처를 B등급으로 A열에 올린다(거래처명에 낱말이 없어도). alias_categories가 null이면 모든 분류의 별칭을 쓴다.",
+  "regex_keywords_note": "영문 기관명은 낱말 경계로 잡는다. 앞에 영문자가 없어야 하고 뒤에는 복수형·-ING만 허용한다. 'ABC BANK LTD'·'BANKING'·'CAPITALS'는 맞고 'EMBANKMENT'·'REFUND'·'ENTRUST'·'LAWSON'은 안 맞는다. group은 finance/legal. BANK·INVESTMENT·INSURANCE·SECURITIES·CAPITAL·FINANCE·TRUST·ASSET MANAGEMENT·FUND·LEASING·CREDIT·GUARANTEE는 금융, LAW·LEGAL·ATTORNEY·LLP는 법률. 외국 금융기관·외국 로펌이 영문으로 기장된 경우를 위한 것이다."
+}

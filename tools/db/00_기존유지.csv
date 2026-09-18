@@ -1,0 +1,13 @@
+institution_id,display_name,category,aliases,note
+coop_nonghyup,농협,상호금융,농협,지역조합/중앙회 여부 미확인 — 원문 유지. NH농협은행과 다른 조직
+coop_suhyup,수협,상호금융,수협,지구별 수협·중앙회. Sh수협은행과 다른 조직이라 수협은행 별칭은 제외
+coop_sinhyup,신협,상호금융,신협|신용협동조합,
+coop_saemaul,새마을금고,상호금융,새마을금고|MG새마을금고,
+bank_post,우체국예금,은행,우체국예금|우체국금융|우체국보험,"별칭 ""우체국""은 우체국택배·지역 우체국 등 금융과 무관한 거래처까지 통합되어 제외했다"
+law_kimchang,김앤장법률사무소,법률,김앤장법률사무소|김앤장,
+law_taepyungyang,법무법인 태평양,법률,법무법인태평양|태평양법무법인,
+law_gwangjang,법무법인 광장,법률,법무법인광장,
+law_sejong,법무법인 세종,법률,법무법인세종,
+law_yulchon,법무법인 율촌,법률,법무법인율촌,
+law_hwawoo,법무법인 화우,법률,법무법인화우,
+law_jipyong,법무법인 지평,법률,법무법인지평,

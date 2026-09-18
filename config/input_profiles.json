@@ -1,0 +1,30 @@
+{
+  "version": "2026-09-16",
+  "note": "분개장 양식별 시트·헤더·열 연결. 다른 회사 양식은 profiles에 항목을 추가하면 된다. 프로그램은 profiles를 순서대로 시도해 헤더가 가장 많이 맞는 것을 자동 선택한다.",
+  "default_profile": "더존_분개장",
+  "profiles": {
+    "더존_분개장": {
+      "sheet_candidates": ["분개장", "Sheet1"],
+      "header_search_rows": 15,
+      "required": ["account", "counterparty"],
+      "columns": {
+        "voucher_id":   ["고유번호", "전표고유번호"],
+        "date":         ["전표일자", "일자", "날짜", "거래일자"],
+        "voucher_no":   ["전표번호", "번호"],
+        "dc":           ["구분", "차대구분"],
+        "account":      ["계정과목", "계정명", "계정과목명"],
+        "debit":        ["차변", "차변금액"],
+        "credit":       ["대변", "대변금액"],
+        "counterparty": ["거래처", "거래처명", "거래처이름"],
+        "description":  ["적요", "비고", "내용", "摘要"]
+      }
+    }
+  },
+  "skip_row_rules": {
+    "note": "거래행으로 취급하지 않는 행 규칙",
+    "require_parsable_date": true,
+    "summary_tokens": ["합계", "소계", "총계", "누계", "계 :", "이월"],
+    "drop_repeated_header": true,
+    "drop_all_empty": true
+  }
+}

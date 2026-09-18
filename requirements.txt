@@ -1,0 +1,4 @@
+# Python 3.10 이상 (개발·검증 환경: 3.14.4, Windows 11)
+openpyxl>=3.1          # 분개장(.xlsx) 읽기 전용 열기
+pywin32>=306           # Excel COM 제어 (XLSM 저장, VBA·ActiveX·도형 보존)
+# tkinter는 파이썬 표준 설치에 포함된다. 별도 설치 불필요.
